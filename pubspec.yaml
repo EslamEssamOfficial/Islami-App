@@ -37,6 +37,7 @@ dependencies:
   flutter_native_splash: ^2.4.6
   google_fonts: ^6.2.1
   toggle_switch: ^2.3.0
+  carousel_slider: ^5.1.1
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,7 @@ flutter:
   assets:
     - assets/images/
     - assets/files/
+    - assets/files/Hadeeth/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

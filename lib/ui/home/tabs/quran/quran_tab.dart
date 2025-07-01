@@ -17,14 +17,12 @@ class QuranTab extends StatefulWidget {
 
 class _QuranTabState extends State<QuranTab> {
   int? selection = 0;
-
   List<int> filterList = List.generate(114, (index) => index);
 
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: width * 0.04,
@@ -57,8 +55,7 @@ class _QuranTabState extends State<QuranTab> {
           Text('Most Recently', style: AppStyles.bold16white),
           SizedBox(height: height * 0.01),
           SizedBox(
-            height: height * 0.18,
-            width: double.infinity,
+            height: height * 0.16,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
@@ -96,8 +93,6 @@ class _QuranTabState extends State<QuranTab> {
             children: [
               Text('Suras List', style: AppStyles.bold16white),
               ToggleSwitch(
-                minWidth: width * 0.2,
-                minHeight: height * 0.04,
                 initialLabelIndex: 0,
                 cornerRadius: 10.0,
                 activeFgColor: AppColor.primaryColor,
@@ -148,17 +143,22 @@ class _QuranTabState extends State<QuranTab> {
 
   void searchByNewText(String textSearch) {
     List<int> filterSearchList = [];
-    for (int i = 0; i < QuranResources.arabicQuranSuras.length; i++) {
-      if (QuranResources.englishQuranSuras[i].toUpperCase().contains(
-        textSearch.toUpperCase(),
-      )) {
-        filterSearchList.add(i);
+    if (textSearch.isEmpty) {
+      filterList = List.generate(114, (index) => index);
+      setState(() {});
+    } else {
+      for (int i = 0; i < QuranResources.englishQuranSuras.length; i++) {
+        if (QuranResources.englishQuranSuras[i].toUpperCase().contains(
+          textSearch.toUpperCase(),
+        )) {
+          filterSearchList.add(i);
+        }
+        if (QuranResources.arabicQuranSuras[i].contains(textSearch)) {
+          filterSearchList.add(i);
+        }
       }
-      if (QuranResources.arabicQuranSuras[i].contains(textSearch)) {
-        filterSearchList.add(i);
-      }
-    }
-    filterList = filterSearchList;
+      filterList = filterSearchList;
     setState(() {});
+    }
   }
 }

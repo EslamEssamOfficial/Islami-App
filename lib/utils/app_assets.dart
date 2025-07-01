@@ -6,6 +6,7 @@ class AppAssets {
   static const String iconTime = 'assets/images/icon_time.png';
   static const String quranBg = 'assets/images/quran_bg.png';
   static const String hadithBg = 'assets/images/hadithBg.png';
+  static const String hadithItemBg = 'assets/images/hadithItemBg.png';
   static const String sebhaBg = 'assets/images/sebhaBG.png';
   static const String radioBg = 'assets/images/radioBg.png';
   static const String timeBg = 'assets/images/timeBg.png';
@@ -18,4 +19,10 @@ class AppAssets {
   static const String mosqueImage = 'assets/images/details_bottom.png';
   static const String sebhaHead = 'assets/images/sebhaHead.png';
   static const String sebhaBody = 'assets/images/SebhaBody.png';
+  static const String hadithItemCornerLeft =
+      'assets/images/hadithItemCornerLeft.png';
+  static const String hadithItemCornerRight =
+      'assets/images/hadithItemCornerRight.png';
+  static const String hadithItemMosque = 'assets/images/hadithItemMosque.png';
+  static const String hadithItemcBgCard = 'assets/images/hadithItemCard.png';
 }
