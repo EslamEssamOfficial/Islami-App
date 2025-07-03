@@ -38,6 +38,8 @@ dependencies:
   google_fonts: ^6.2.1
   toggle_switch: ^2.3.0
   carousel_slider: ^5.1.1
+  shared_preferences: ^2.5.3
+  provider: ^6.1.5
 
 dev_dependencies:
   flutter_test:

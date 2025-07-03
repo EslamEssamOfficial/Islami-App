@@ -5,6 +5,9 @@ import 'package:islami_app/ui/home/tabs/quran/quran_resources.dart';
 import 'package:islami_app/utils/app_assets.dart';
 import 'package:islami_app/utils/app_colors.dart';
 import 'package:islami_app/utils/app_styles.dart';
+import 'package:provider/provider.dart';
+
+import '../../../../../providers/most_recent_provider.dart';
 
 class SuraDetailsScreen2 extends StatefulWidget {
   static const String routeName = 'SuraDetailsScreen2';
@@ -17,10 +20,20 @@ class SuraDetailsScreen2 extends StatefulWidget {
 
 class _SuraDetailsScreenState extends State<SuraDetailsScreen2> {
   String suraContent = '';
+  late MostRecentProvider mostRecentProvider;
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    mostRecentProvider.getMostRecentSuraList();
+  }
 
   @override
   Widget build(BuildContext context) {
     int index = ModalRoute.of(context)?.settings.arguments as int;
+    mostRecentProvider = Provider.of<MostRecentProvider>(context);
+
     if (suraContent.isEmpty) {
       loadSuraFile(index);
     }
