@@ -4,6 +4,7 @@ class SharedPrefsKey{
 }
 
 //todo: set data
+//test
 void saveNewSuraList(int newSuraIndex)async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   List<String> mostRecentIndicesList = prefs.getStringList(SharedPrefsKey.sharedPrefsKey)??[];
