@@ -31,7 +31,7 @@ class SuraItem extends StatelessWidget {
               style: AppStyles.bold16white.copyWith(fontSize: 20),
             ),
             Text(
-              QuranResources.ayaNumbers[index],
+              '${QuranResources.ayaNumbers[index]} Verses',
               style: AppStyles.bold16white.copyWith(fontSize: 14),
             ),
           ],
